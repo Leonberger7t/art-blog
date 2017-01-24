@@ -1,0 +1,19 @@
+<h1>  User Info:</h1>
+
+	<br>
+	<%=  image_tag @user.image.url%>
+	<hr>
+
+<h1> <%= link_to "Add a New Blog", new_post_path %> </h1>
+<hr>
+  <h3>Post List:</h3>
+	<hr>
+	<% @user_posts.each do |post| %>
+	  Blog Title: <%= post.title %><br>
+    Blog Content: <%= post.content %><br>
+
+
+		<%=  image_tag post.image.url(:thumb)%>
+		<hr>
+	  <br><br>
+	<% end %>
